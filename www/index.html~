@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" href="libs/leaflet/leaflet.css" />
+        <script src="libs/leaflet/leaflet.js"></script>
+		<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.3.2.css" />
+		<link rel="stylesheet" href="css/index2.css" />
+		<script type="text/javascript" src="phonegap.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.mobile-1.3.2.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <title>Hello World</title>
+    </head>
+    <body>
+		<form>
+				   <div style="display:inline-block;width:60%" id="searchbox">
+				    <input id="text" value="" placeholder="Search" type="search" data-theme="b" />
+					</div>
+					<div style="display:inline-block" id="buildinghold">
+					<select id="buildinglist" data-inline="true" data-icon="arrow-d">
+						<option value="none" selected="selected">Building/Landmark</option>
+						<option value="arogya">Aarogya</option>
+						<option value="bakul">Bakul</option>
+						<option value="canteen1">Canteen(Guest House)</option>
+						<option value="canteen2">Canteen(Vindhya)</option>
+						<option value="felicityground">Felicity Ground</option>
+						<option value="footballground">Football Ground</option>
+						<option value="girlshostel">Girls Hostel</option>
+						<option value="himalaya">Himalaya</option>
+						<option value="iiitgate">IIIT Gate</option>
+						<option value="musicroom">Music Room</option>
+						<option value="nbh">NBH</option>
+						<option value="nbhmess">NBH Mess</option>
+						<option value="nilgiri">Nilgiri</option>
+						<option value="obh">OBH</option>
+						<option value="ff">OBH-FF</option>
+						<option value="gf">OBH-GF</option>
+						<option value="parul">Parul</option>
+						<option value="sbh">SBH</option>
+						<option value="vindhyaa4">Vindhya</option>
+						<option value="vindhyaa2">Vindhya A2</option>
+						<option value="vindhyaa4">Vindhya A4</option>
+						<option value="vindhyaa6">Vindhya A6</option>
+						<option value="vindhyac2">Vindhya C2</option>
+						<option value="vindhyac4">Vindhya C4</option>
+						<option value="vindhyac6">Vindhya C6</option>
+					</select>
+					</div>
+                   <select id="searchList" data-inline="true" data-iconpos="notext" data-icon="arrow-d">
+                          <option value="room">Search By Room</option>
+                          <option value="name">Search By Name</option>
+                          <option value="lab">Search By Lab</option>
+                          <option value="build" selected="selected">Search By Building/Landmark</option>
+                  </select>
+				<input id="submit" type="submit" data-type="button" data-icon="search" value="Search" data-theme="b" />
+		</form>
+					<div id="hold" style="width:60%">
+					<input type="text" placeholder="Room number" data-theme="b" id="roomnumber" />
+					</div>
+		  <button id="present" data-mini="true" data-inline="true">Present Location</button>
+		  <a href="menu.html" data-role="button" data-icon="grid" data-mini="true" data-inline="true">Menu</a>
+		  <button id="path" data-role="button" data-icon="check" data-mini="true" data-inline="true"> Get Direction</button>
+		<div id="hold2">
+		<div style="display:inline-block" id="sourcebuildinghold">
+					<select id="sourcebuildinglist" data-inline="true" data-icon="arrow-d">
+						<option value="none" selected="selected">Building/Landmark</option>
+						<option value="arogya">Aarogya</option>
+						<option value="bakul">Bakul</option>
+						<option value="canteen1">Canteen(Guest House)</option>
+						<option value="canteen2">Canteen(Vindhya)</option>
+						<option value="felicityground">Felicity Ground</option>
+						<option value="footballground">Football Ground</option>
+						<option value="girlshostel">Girls Hostel</option>
+						<option value="himalaya">Himalaya</option>
+						<option value="iiitgate">IIIT Gate</option>
+						<option value="musicroom">Music Room</option>
+						<option value="nbh">NBH</option>
+						<option value="nbhmess">NBH Mess</option>
+						<option value="nilgiri">Nilgiri</option>
+						<option value="obh">OBH</option>
+						<option value="ff">OBH-FF</option>
+						<option value="gf">OBH-GF</option>
+						<option value="parul">Parul</option>
+						<option value="sbh">SBH</option>
+						<option value="vindhyaa4">Vindhya</option>
+						<option value="vindhyaa2">Vindhya A2</option>
+						<option value="vindhyaa4">Vindhya A4</option>
+						<option value="vindhyaa6">Vindhya A6</option>
+						<option value="vindhyac2">Vindhya C2</option>
+						<option value="vindhyac4">Vindhya C4</option>
+						<option value="vindhyac6">Vindhya C6</option>
+					</select>
+		</div>
+		<input type="text" placeholder="Room no" id="source2" data-theme="b" data-inline="true" /><br />
+		<div style="display:inline-block" id="destbuildinghold">
+					<select id="destbuildinglist" data-inline="true" data-icon="arrow-d">
+						<option value="none" selected="selected">Building/Landmark</option>
+						<option value="arogya">Aarogya</option>
+						<option value="bakul">Bakul</option>
+						<option value="canteen1">Canteen(Guest House)</option>
+						<option value="canteen2">Canteen(Vindhya)</option>
+						<option value="felicityground">Felicity Ground</option>
+						<option value="footballground">Football Ground</option>
+						<option value="girlshostel">Girls Hostel</option>
+						<option value="himalaya">Himalaya</option>
+						<option value="iiitgate">IIIT Gate</option>
+						<option value="musicroom">Music Room</option>
+						<option value="nbh">NBH</option>
+						<option value="nbhmess">NBH Mess</option>
+						<option value="nilgiri">Nilgiri</option>
+						<option value="obh">OBH</option>
+						<option value="ff">OBH-FF</option>
+						<option value="gf">OBH-GF</option>
+						<option value="parul">Parul</option>
+						<option value="sbh">SBH</option>
+						<option value="vindhyaa4">Vindhya</option>
+						<option value="vindhyaa2">Vindhya A2</option>
+						<option value="vindhyaa4">Vindhya A4</option>
+						<option value="vindhyaa6">Vindhya A6</option>
+						<option value="vindhyac2">Vindhya C2</option>
+						<option value="vindhyac4">Vindhya C4</option>
+						<option value="vindhyac6">Vindhya C6</option>
+					</select>
+		</div>
+		<input type="text" placeholder="Room no" id="destination2" data-theme="b" data-inline="true" />
+		<button id="submit2" data-icon="search" data-mini="true" data-inline="true" data-theme="b">Get Path</button>
+		</div>
+		<button id="back" data-mini="true" data-icon="refresh" data-inline="true">Clear Map</button>
+        		<div id="map-canvas" class="random" style="height:75%">         
+                <script type="text/javascript">
+				$("#hold").hide();
+				$("#hold2").hide();
+				$("#searchbox").hide();
+                    $("#searchList").change(function()
+				{
+					document.getElementById("text").value="";
+					document.getElementById("roomnumber").value="";
+				        if(document.getElementById("searchList").value == "room")
+					{
+				            document.getElementById("text").placeholder="Enter Building";
+						$("#hold").slideDown();
+						$("#searchbox").slideDown();
+						$("#buildinghold").hide();
+			                }
+			                else if( document.getElementById("searchList").value == "name")
+			                {
+			                        document.getElementById("text").placeholder="Enter Name";
+						$("#searchbox").slideDown();
+						$("#buildinghold").hide();
+						$("#hold").hide();
+		                        }
+					else if( document.getElementById("searchList").value == "build")
+			                {
+				            document.getElementById("text").placeholder="Enter Building Name";
+		               		    $("#hold").hide();
+				            $("#searchbox").hide();
+					    $("#buildinghold").slideDown();
+		                        }
+					else if( document.getElementById("searchList").value == "lab")
+					{
+						document.getElementById("text").placeholder="Enter Lab Name";
+						$("#searchbox").slideDown();
+						$("#buildinghold").hide();
+						$("#hold").hide();
+					}
+			    });
+		        $("#submit").click(function()
+		        {
+					if(document.getElementById("searchList").value == "room")
+					{
+							buildno= document.getElementById("text").value;
+							rno = document.getElementById("roomnumber").value;
+		                                        var ret_val=search_by_room(buildno,rno,"RoomList.json");
+							if(ret_val==-1)
+			                                {
+			                                      	alert('A valid building and room required');
+			                                }
+		                        }
+					else if( document.getElementById("searchList").value == "name")
+					{
+			        		buildno= document.getElementById("text").value;
+		                                var ret_val=search_by_name(buildno,"RoomList.json");
+						if(ret_val==-1)
+			                        {
+			                        	alert("A valid name is required");
+			                        }
+					}
+					else if( document.getElementById("searchList").value == "build")
+					{
+						buildno= document.getElementById("buildinglist").value;
+		                                var ret_val=search_by_building(buildno,"node.json");
+			                        if(ret_val==-1)
+			                        {
+			                        	alert("A valid building name is required");
+			                        }
+					}
+					else if( document.getElementById("searchList").value == "lab")
+					{
+						buildno= document.getElementById("text").value;
+		                                var ret_val=search_by_lab(buildno,"RoomList.json");
+			                        if(ret_val==-1)
+			                        {
+			                        	alert("A valid Lab name is required");
+			                        }
+					}
+					document.getElementById("text").value="";
+					document.getElementById("roomnumber").value="";
+					document.getElementById("searchList").value = "none";
+					document.getElementById("text").value="";
+					document.getElementById("text").placeholder="Search";
+			        });
+			        $("#update").click(function()
+			        {
+			                  downloadFile();
+		            });     
+			        $("#back").click(function()
+			        {
+				        window.location.reload(true); 
+				    });
+				$("#present").click(function()
+				{
+				        app.presentloc();
+				});
+				var showing=0;
+				$("#path").click(function()
+					{
+						$("#source1").val("");
+						$("#source2").val("");
+						$("#destination1").val("");
+						$("#destination2").val("");
+						if(showing==0)
+						{
+							$("#hold2").slideDown();
+							showing=1;
+						}
+						else
+						{
+							$("#hold2").slideUp();
+							showing=0;
+						}
+					});
+				$("#submit2").click(function()
+				{
+				        //src1=document.getElementById("source1").value;
+						src1= document.getElementById("sourcebuildinglist").value;
+				        src2=document.getElementById("source2").value;        
+				        //dest1=document.getElementById("destination1").value;
+						dest1= document.getElementById("destbuildinglist").value;						
+		                dest2=document.getElementById("destination2").value;
+						routing(src1,src2,dest1,dest2,"edgelist.json","RoomList.json","node.json");
+				});
+        app.initialize();
+                        </script>
+                </div>
+    </body>
+</html>

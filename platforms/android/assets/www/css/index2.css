@@ -1,0 +1,30 @@
+form > .ui-input-search 
+{
+	display : inline-block;
+	width   : 60%;
+	vertical-align : middle;
+}
+form > .ui-btn 
+{
+	display : inline-block;
+	/*width   : 10%;*/
+	vertical-align : middle;
+}
+form > .ui-select
+{
+	display : inline-block;
+	/*width : 20%;*/
+	vertical-align : middle;
+}
+#hold2 > .ui-input-text
+{
+	display : inline-block;
+	width   : 35%;
+	vertical-align : middle;
+}
+#hold2 > .ui-btn 
+{
+	display : inline-block;
+	/*width   : 10%;*/
+	vertical-align : middle;
+}
